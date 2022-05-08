@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
-}
+:root{/*변수 설정*/ 
+    --confirmed_case_bg_color:white;
+    }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+    .main_title {font-size : 1.25rem;}
+    body{/*바디 설정*/
+        margin:0;
+        color: white;
+        overflow-x: hidden /*border이 옆으로 안 나가게 함*/
+        
+    }
+    .navbar_menu a, .menu_section a{    /*하이퍼 링크 설정*/
+    display : block;
+    
+    }
+    
+    a{    /*하이퍼 링크 설정*/
+        color:white;
+        text-decoration: none;
+    }
+    
+    #footer{
+      background-color: #263343;
+      padding : 0.5rem 1.5rem;
+    }
+    
+    img {
+      width: 22.75rem;
+    height : 12.375rem;
+    }
+    
+    marquee{
+    
+      text-align:center;
+    
+      padding : 0.5rem;
+    
+    }
+    .title_name{
+      width:100%;
+      text-align: center;
+      font-size:1.0625rem;
+      padding : 0.25rem ;
+      border : 0.0625rem solid #000000;
+    }
+    
+    
+    
+    .navbar_logo{  /*메뉴 로고*/
+        font-size: 1rem;
+        color: white;
+    }
+    
+    .navbar_logo i{/*메뉴 로고*/
+        color: #d49466;
+    }
+    
+    
+    
+    
+    .navbar_menu li:hover{/*메뉴 리스트에 마우스를 올렸을 때 설정*/
+        background-color: #d49466;
+        border-radius: 0.25rem;
+    }
+    
+    .navbar_toggleBtn{/*페이지가 줄어들 때 나오는 토글 버튼 설정*/
+        position: absolute;
+        right: 2rem;
+        font-size: 1.5rem;
+        color: #d49466;
+        display: none;
+    }
+    .main_section{/*메인 세션*/
+        border: solid 0.0625rem #000000;
+        background-color: #485565;
+    
+    }
+    .menu_section{/*메뉴 세션*/
+        display: flex;
+        border: solid 0.0625rem #000000;
+        border-radius: 0.25rem;
+        width: 100%;
+        height : 80%;
+        justify-content: space-around;
+    }
+    
+    #daily_confirmed_case,#weekly_confirmed_case,#monthly_confirmed_case
+    ,#cumulative_confirmed_case, #map, #list
+    {/*확진자 쪽 버튼*/
+    
+    text-decoration: none;
+    border:0.0625rem solid #263343;
+    border-radius: 0.25rem;
+    background-color: #263343;
+    width:30%;
+    text-align: center;
+    }
+    
+    #daily_confirmed_case:hover,#weekly_confirmed_case:hover,#monthly_confirmed_case:hover
+    ,#cumulative_confirmed_case:hover, #map:hover, #list:hover{/*확진자, 지도, 리스트에 마우스를 올려뒀을 때 백그라운드 색상 지정*/
+    background-color: #d49466;
+    
+    }
+    
+    #information{
+        display: inline;
+    
+        border : #000000 0.0625rem solid;
+    }
+    .navbar{/*메뉴창 설정*/
+        
+        display: flex;
+        align-items: center;
+        background-color: #263343;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .navbar{/*메뉴판을 플렉스로 바꿈*/
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar_menu{/*메뉴의 좌우를 100%로 수정, 글자는 중앙으로, 메뉴판을 가림*/
+        flex-direction: column;
+        
+        width:100%;
+        display: none;
+        list-style: none;
+        padding-left: 0;
+    }
+    .navbar_menu li{/*글자 중앙*/
+        width : 100%;
+        text-align:center;
+    }
+    .navbar_toggleBtn{/*햄버거 토글 버튼을 보이게 함*/
+    display: block;
+    }
+    
+    .navbar_menu.active{/*가려졌던 메뉴판을 활성화 시킴*/
+        display: flex;
+    }
+    
+    
+    .content{/*컨텐츠의 기본 서식*/
+        margin:1vw;
+        width:auto;
+        height:40vh;
+        background-color: #dddddd;
+        display:none;
+        border-radius: 0.3125rem;
+    }
+    
+    #content1.on, #content2.on, #content3.on, #content4.on, #content5.on, #content6.on{/*일일,주간,월간,누적,지도,리스트에 따라 컨텐츠가 보이고 안보이고 하게 설정*/
+        display:block;
+    }
+    
+    canvas{
+        align-items: center;
+        width: 95vw;
+        height: 100%;
+        max-width: auto;
+        max-height : 100%;
+        color:#ffffff;
+    }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    
+    @media screen and (min-width:48rem){/*320px 이상일 때*/
+        .navbar{/*메뉴창 설정*/
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+        }
+        .navbar_menu{/*네비 메뉴바를 붙이는 설정*/
+            display: flex;
+            flex-direction: row;
+            width : auto;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar_menu li{/*메뉴의 리스트의 페딩 크기 지정*/
+            width:auto;
+            padding: 0.5rem 1.5rem;
+        }
+        .navbar_toggleBtn{/*햄버거 토글 버튼을 안 보이게 함*/
+            display: none;
+            }
+    }
+    
+    
