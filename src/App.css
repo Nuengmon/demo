@@ -2,8 +2,23 @@
     --confirmed_case_bg_color:white;
     }
 
+table{
+    color:#000000;
+    
+}
+th, td{
 
-    .main_title {font-size : 1.25rem;}
+    border-radius: 0.25rem;
+}
+tr:nth-child(even) {
+    border: 0.0625rem solid #cccccc;
+    background-color : #cccccc
+  }
+tr:nth-child(odd) {
+    border: 0.0625rem solid #bbbbbb;
+    background-color : #bbbbbb
+}
+.main_title {font-size : 1.25rem;}
     body{/*바디 설정*/
         margin:0;
         color: white;
@@ -150,6 +165,11 @@
         border-radius: 0.3125rem;
     }
     
+    #content6{
+        height : auto;
+    }
+
+
     #content1.on, #content2.on, #content3.on, #content4.on, #content5.on, #content6.on{/*일일,주간,월간,누적,지도,리스트에 따라 컨텐츠가 보이고 안보이고 하게 설정*/
         display:block;
     }
